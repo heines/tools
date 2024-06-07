@@ -55,10 +55,10 @@ export default function Page() {
     <main>
       <h1>シャッフル</h1>
       <h2>取り込みデータ</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="container" onSubmit={handleSubmit(onSubmit)}>
         {fields.map((item, index) => (
-          <div key={item.id}>
-            <input {...register(`items.${index}.value`)} />
+          <div className="is-flex" key={item.id}>
+            <input className="input" type="text" {...register(`items.${index}.value`)} />
             <button type="button" onClick={() => remove(index)}>x</button>
           </div>
         ))}
