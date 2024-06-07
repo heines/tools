@@ -18,8 +18,6 @@ export default function Home() {
         <Link
           href="/tools"
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2>
             Tools <span>-&gt;</span>
@@ -28,8 +26,6 @@ export default function Home() {
         <Link
           href="/tools/shuffle"
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2>
             Tools/shuffle <span>-&gt;</span>
