@@ -17,7 +17,7 @@ export default function Page() {
     name: 'items'
   });
 
-  const shuffle = (arr: Array<number>) => {
+  const shuffle = (arr: Array<String>) => {
     let ans = arr.slice();
     for(let i = ans.length - 1; i > 0; i--){
       let r = Math.floor(Math.random() * (i + 1));
@@ -28,11 +28,10 @@ export default function Page() {
     return ans;
   }
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: Array<String>) => {
     const items = getValues('items');
-    const values = items.map(item => item.value);
-    base = values.slice();
 
+    // enterでinputフォームを追加する
     const lastItem = items[items.length - 1];
     if (lastItem.value !== '') {
       append({ value: '' });
@@ -42,7 +41,7 @@ export default function Page() {
   const onShuffle = () => {
     const items = getValues('items');
     const values = items.map(item => item.value);
-    base = values.slice();
+    base = values.filter(x => x !== '');
   
     // シャッフル関数を呼び出す
     const shuffledValues = shuffle(base);
