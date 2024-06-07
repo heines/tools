@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import Button from '../../../components/elements/Button';
+type DataType = { items: { value: string; }[]; };
 
 export default function Page() {
   let base: Array<String> = [];
@@ -28,7 +29,7 @@ export default function Page() {
     return ans;
   }
 
-  const onSubmit = (data: Array<String>) => {
+  const onSubmit: SubmitHandler<DataType> = (data: Array<String>) => {
     const items = getValues('items');
 
     // enterでinputフォームを追加する
